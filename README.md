@@ -18,7 +18,7 @@ Make sure you have:
 ### Build instructions
 
 ```bash
-git clone MY_GITHUB
+git clone https://github.com/TimmPeterson/tp5-rt.git
 cd tp5-rt
 mkdir build && cd build
 cmake ..
@@ -148,7 +148,7 @@ cam.SetLocAtUp(
 // to the certain pixel on the sreen
 ray r = cam.FrameRay(123, 456); // <-- pixel coordintes
 
-/***
+/*
  * There are also types:
  *   - vec2
  *   - vec4
@@ -159,5 +159,5 @@ ray r = cam.FrameRay(123, 456); // <-- pixel coordintes
  * By default the component type for these types is double.
  * However you can find templates of these types in `mth` namespace
  * and create instances of them with any component type. 
- ***/
+ */
 ```

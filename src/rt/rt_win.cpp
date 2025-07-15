@@ -45,8 +45,20 @@ tp5::rt_win::rt_win( int W, int H ) : Window(W, H), Frm(W, H)
     std::system(buf);
   }
 #endif /* 0 */  
-  //Render();
 } /* End of 'rt_win::rt_win' function */
+
+/* 'rt_win' class destructor */
+tp5::rt_win::~rt_win()
+{
+  if (this->Scene.IsRenderActive)
+  {
+    this->Scene.IsToBeStop = true;
+    std::cout << "\nWait render thread finishing...\n";
+    while (!this->Scene.IsReadyToFinish)
+      ;
+  }
+  std::cout << "\nFinished\n";
+} /* End of 'rt_win' destructor */
 
 /* Resize all local fields. 
  * ARGUMENTS:

@@ -32,7 +32,11 @@ namespace tp5
     camera Cam;   // Camera raytracing
     scene  Scene; // Scene to render
 
+    /* 'rt_win' class constructor */
     rt_win( int W, int H );
+
+    /* 'rt_win' class destructor */
+    ~rt_win();
 
     /* Resize all local fields. 
      * ARGUMENTS:

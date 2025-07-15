@@ -21,7 +21,7 @@ Make sure you have:
 git clone https://github.com/TimmPeterson/tp5-rt.git
 cd tp5-rt
 mkdir build && cd build
-cmake ..
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .. 
 make
 ./bin/tp5-rt
 ```
@@ -29,15 +29,17 @@ make
 ## Structure
 ```
 tp5-rt
+├── include/tp5/
+│   └── rt.h <--------- general header file
 ├── lib/    
 ├── build/ 
-│   └── bin/ <--- executable directory
+│   └── bin/ <--------- executable directory
 ├── src/
 │   ├── rt/
 │   │   ├── shapes/
 │   │   ├── lights/
 │   │   └── mods/
-│   ├── win/
+│   ├── win/ <--------- OS dependend
 │   ├── frame/
 │   └── mth/
 └── CMakeLists.txt
@@ -46,7 +48,7 @@ tp5-rt
 ## Usage Example
 
 ```cpp
-#include "rt/rt.h"
+#include "tp5/rt.h"
 
 int main( void )
 {
@@ -118,10 +120,17 @@ matr vi = matr::View(v1, v2, v3);
  ***/
 
 vec3 
-  transformed_vector           = m1.VectorTransform(v1), // Applies as 3x3 matrix
-  transformed_normal           = m1.TransformNormal(v1); // Applies as 3x3 but as Invert(Transpose(m1))
-  transformed_point            = m1.PointTransform(v1),  // Applies as 4x4 to (v1.x, v1.y, v1.z, 1)
-  completely_transformed_point = m1.Transform4x4(v1),    // Same as previous but then devides by last component
+  /* Applies as 3x3 matrix                               */
+  transformed_vector           = m1.VectorTransform(v1),
+  
+  /* Applies as 3x3 but as Invert(Transpose(m1))         */
+  transformed_normal           = m1.TransformNormal(v1),
+
+  /* Applies as 4x4 to (v1.x, v1.y, v1.z, 1)             */
+  transformed_point            = m1.PointTransform(v1), 
+  
+  /* Same as previous but then devides by last component */
+  completely_transformed_point = m1.Transform4x4(v1);
 
 /***
  * Camera

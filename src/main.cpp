@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 
-#include "rt/rt.h"
+#include "tp5/rt.h"
 
 const int WIDTH  = 1024;
 const int HEIGHT = 512;
@@ -17,7 +17,7 @@ int main( void )
   auto lw = new point_light(vec3(10), vec3(1));
   auto lg = new point_light(vec3(10, -10, -10), vec3(0, 0.5, 0));
   
-  MyWin.Scene << t << p << lw;
+  MyWin.Scene << t << p << lw << lg;
   
   MyWin.Run();
 

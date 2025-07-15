@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.0)
-project(TestSDL2)
+project(tp5-rt)
 
 # Make additinal inner directory build/bin/ for executable and libs
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
@@ -31,3 +31,4 @@ target_link_libraries(app ${SDL2_LIBRARIES})
 # Add extra include dirs ("." and "./src")
 target_include_directories(app PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_include_directories(app PRIVATE ${CMAKE_SOURCE_DIR})
+target_include_directories(app PRIVATE ${CMAKE_SOURCE_DIR}/include)

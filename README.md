@@ -144,8 +144,9 @@ cam.SetLocAtUp(
   vec3(0, 1, 0)  // Up direction
 );
 
-// Returns ray from the origin 
-// to the certain pixel on the sreen
+/* Returns ray from the origin 
+ * to the certain pixel on the sreen
+ */
 ray r = cam.FrameRay(123, 456); // <-- pixel coordintes
 
 /*

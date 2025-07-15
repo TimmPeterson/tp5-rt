@@ -27,7 +27,7 @@
  *   - instance:
  *       HINSTANCE hInst;
  */
-tp5::rt_win::rt_win( int W, int H ) : Window(W, H), Frm(W, H)
+tp5::rt_win::rt_win( int W, int H ) : window(W, H), Frm(W, H)
 {
   Frm.Resize(W, H);
   Frm.Clear(0xFF0000FF);
@@ -107,7 +107,7 @@ void tp5::rt_win::OnKeyDown( SDL_Keysym KeySym )
   switch(KeySym.sym)
   {
   case SDLK_ESCAPE:
-    Window::running = false;
+    window::running = false;
     return;
   case SDLK_r:
     if (!Scene.IsRenderActive)
@@ -121,7 +121,7 @@ void tp5::rt_win::OnKeyDown( SDL_Keysym KeySym )
         [&]( void )
         {
           Scene.Render(Cam, Frm);
-          Window::DrawFrame(Frm);
+          window::DrawFrame(Frm);
           
           clock_t tt = clock();
           tt = clock() - tt;
@@ -151,7 +151,7 @@ void tp5::rt_win::OnKeyDown( SDL_Keysym KeySym )
 
 void tp5::rt_win::OnIdle( void )
 {
-  Window::DrawFrame(this->Frm);
+  window::DrawFrame(this->Frm);
 }
 
 // /* WM_KEYDOWN window message handle function.

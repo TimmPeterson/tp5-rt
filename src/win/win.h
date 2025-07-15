@@ -9,7 +9,7 @@ namespace tp5
 {
   class frame;
 
-  class Window 
+  class window 
   {
   protected:
     bool running;
@@ -18,20 +18,20 @@ namespace tp5
     int 
       width, 
       height;
-    SDL_Window   *window;
+    SDL_Window   *wnd;
     SDL_Renderer *renderer;
     SDL_Texture  *texture;
     
   public:
-    Window( int W, int H );
+    window( int W, int H );
 
-    ~Window();
+    ~window();
 
     void DrawPixels( dword *Pixels ) const;
 
     void DrawFrame( const frame &F ) const;
 
-    /* Window events dispatching method.
+    /* window events dispatching method.
     * ARGUMENTS: None.
     * RETURNS: None.
     */

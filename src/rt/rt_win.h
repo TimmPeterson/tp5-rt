@@ -25,7 +25,7 @@
 namespace tp5
 {
   /* Ray tracing window representation type */
-  class rt_win : public Window
+  class rt_win : public window
   {
   public:
     frame  Frm;   // frame for rendering to window

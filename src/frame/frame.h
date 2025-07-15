@@ -14,7 +14,7 @@ class scene;
 
 class frame
 {
-  friend class Window;
+  friend class window;
   friend class scene;
 private:
   int width, height;

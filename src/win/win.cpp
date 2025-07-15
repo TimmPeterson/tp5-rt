@@ -4,13 +4,13 @@
 namespace tp5
 {
 
-Window::Window( int W, int H ) : running(false), width(W), height(H)
+window::window( int W, int H ) : running(false), width(W), height(H)
   {
     SDL_Init(SDL_INIT_VIDEO);
     
-    window =
+    wnd =
       SDL_CreateWindow(
-        "Pixel Window", 
+        "Pixel window", 
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED, 
         width, height,
@@ -19,7 +19,7 @@ Window::Window( int W, int H ) : running(false), width(W), height(H)
 
     renderer = 
       SDL_CreateRenderer(
-        window, 
+        wnd, 
         -1, 
         SDL_RENDERER_ACCELERATED
       );
@@ -34,33 +34,33 @@ Window::Window( int W, int H ) : running(false), width(W), height(H)
       );
   }
 
-  Window::~Window()
+  window::~window()
   {
     SDL_DestroyTexture(texture);
     SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
+    SDL_DestroyWindow(wnd);
     SDL_Quit();
   }
 
-  void Window::DrawPixels( dword *Pixels ) const
+  void window::DrawPixels( dword *Pixels ) const
   {
     SDL_UpdateTexture(texture, nullptr, Pixels, width * sizeof(uint32_t));
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, texture, nullptr, nullptr);
   }
 
-  void Window::DrawFrame( const frame &F ) const
+  void window::DrawFrame( const frame &F ) const
   {
     SDL_UpdateTexture(texture, nullptr, F.pixels, F.width * sizeof(uint32_t));
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, texture, nullptr, nullptr);
   }
 
-  /* Window events dispatching method.
+  /* window events dispatching method.
    * ARGUMENTS: None.
    * RETURNS: None.
    */
-  void Window::Run( void )
+  void window::Run( void )
   {
     SDL_Event event;
     
@@ -101,7 +101,7 @@ Window::Window( int W, int H ) : running(false), width(W), height(H)
    * NOTE:
    *   'KeySym.sym' for exact symbol;
    */
-  void Window::OnKeyDown( SDL_Keysym KeySym )
+  void window::OnKeyDown( SDL_Keysym KeySym )
   {
   } /* End of 'OnKeyDown' method */
 
@@ -110,7 +110,7 @@ Window::Window( int W, int H ) : running(false), width(W), height(H)
    *   - new size:
    *        int NewW, NewH;
    */
-  void Window::OnSize( int NewW, int NewH )
+  void window::OnSize( int NewW, int NewH )
   {
   } /* End of 'OnSize' method */
 
@@ -118,7 +118,7 @@ Window::Window( int W, int H ) : running(false), width(W), height(H)
    * ARGUMENTS: None.
    * RETURNS: None.
    */
-  void Window::OnIdle( void )
+  void window::OnIdle( void )
   {
   } /* End of 'OnIdle' method */
 } 

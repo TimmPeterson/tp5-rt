@@ -1,5 +1,7 @@
 # Realistic CPU ray tracing (arch linux build)
 
+![Пример рендера изображения](assets/zamay.jpg)
+
 API for rendering realistic mathmatical shapes, triangulated primitives and more using ray tracing algorithm.
 
 ## Getting Started

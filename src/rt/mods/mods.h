@@ -22,7 +22,6 @@
 
 #include "def.h"
 #include "mods_def.h"
-#include "../img/img.h"
 
 /* Base project namespace */
 namespace tp5
@@ -60,6 +59,7 @@ namespace tp5
       } /* End of 'operator()' function */
     }; /* End of 'func' class */
 
+#if 0
     /* Checked texture modificator representation type */
     class tex : public mod
     {
@@ -102,6 +102,7 @@ namespace tp5
         return ToVec3(Img.GetPixel((int)g.X, (int)g.Z));
       } /* End of 'operator()' function */
     }; /* End of 'tex' class */
+#endif /* 0 */
 
     /* Gradient modificator representation type */
     class grad : public mod

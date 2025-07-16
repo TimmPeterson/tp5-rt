@@ -21,7 +21,7 @@
 #include <cstdio>
 #include <fstream>
 
-#include "rt/rt_def.h"
+#include "shape.h"
 #include "triangle.h"
 
 /* Base project namespace */

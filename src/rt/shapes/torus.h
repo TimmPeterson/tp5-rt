@@ -19,7 +19,7 @@
 #define __torus_h_
 
 #include "mth/mth_poly.h"
-#include "rt/rt_def.h"
+#include "shape.h"
 
 /* Base project namespace */
 namespace tp5

@@ -18,7 +18,7 @@
 #ifndef __g3dm_h_
 #define __g3dm_h_
 
-#include "rt/rt_def.h"
+#include "shape.h"
 #include "triangle.h"
 
 /* Base project namespace */

@@ -18,7 +18,7 @@
 #ifndef __triangle_h_
 #define __triangle_h_
 
-#include "rt/rt_def.h"
+#include "shape.h"
 
 /* Base project namespace */
 namespace tp5

@@ -4,7 +4,7 @@
 
 API for rendering realistic mathmatical shapes, triangulated primitives and more using ray tracing algorithm.
 
-## Table Of Contets
+## Table of Contents
 - [Dependencies](#dependencies)
 - [Build Instructions](#build-instructions)
 - [Structure](#structure)

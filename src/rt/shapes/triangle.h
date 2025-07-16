@@ -1,18 +1,9 @@
-/*************************************************************
- * Copyright (C) 2024
- *    Computer Graphics Support Group of 30 Phys-Math Lyceum
- *************************************************************/
- 
-/* FILE NAME   : triangle.h
- * PURPOSE     : Raytracing project.
- *               Triangle shape class defenition header.
- * PROGRAMMER  : CGSG-SummerCamp'2024.
- *               Timofei I. Petrov.
- * LAST UPDATE : 23.07.2024.
- * NOTE        : Module namespace 'virt'.
- *
- * No part of this file may be changed without agreement of
- * Computer Graphics Support Group of 30 Phys-Math Lyceum
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : triangle.h
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : Triangle shape defenition file.
+ * LICENSE     : MIT License
  */
 
 #ifndef __triangle_h_
@@ -29,13 +20,13 @@ namespace tp5
     friend class obj;
     friend class g3dm;
   protected:
-    vec3 P0, P1, P2;    // Triangle vertexes
-    vec3 N, N1, N2, N3; // Normal (evaluated in constructor)
-    vec3 U1, V1;        // Cashed vector for intersection evaluating
-    vec3 S1, S2;        // Vertex differences
-    double  U0, V0;        // Constant for intersection evaluating
-    double  D;             // Constant for plane intersection
-    bool Smooth;        // Use smooth normals
+    vec3   P0, P1, P2;    // Triangle vertexes
+    vec3   N, N1, N2, N3; // Normal (evaluated in constructor)
+    vec3   U1, V1;        // Cashed vector for intersection evaluating
+    vec3   S1, S2;        // Vertex differences
+    double U0, V0;        // Constant for intersection evaluating
+    double D;             // Constant for plane intersection
+    bool   Smooth;        // Use smooth normals
   public:
     /* 'triangle' class constructor function.
      * ARGUMENTS:

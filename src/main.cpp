@@ -1,12 +1,26 @@
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : rt_win.h
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : Example main file.
+ * LICENSE     : MIT License
+ */
+
 #include <SDL2/SDL.h>
 
 #include "tp5/rt.h"
 
+/* Example resolution */
 const int WIDTH  = 1024;
 const int HEIGHT = 512;
 
+/* Base developer namespace */
 using namespace tp5;
 
+/* Main project function. 
+ * ARGUMENTS: None.
+ * RETURNS: (int)
+ */
 int main( void ) 
 {
   tp5::rt_win MyWin(WIDTH, HEIGHT);
@@ -32,4 +46,6 @@ int main( void )
   std::cout << "\nFinish\n";
 
   return 0;
-}
+} /* End of 'main' function */
+
+/* END OF 'main.cpp' FILE */

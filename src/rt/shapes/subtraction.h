@@ -1,18 +1,9 @@
-/*************************************************************
- * Copyright (C) 2024
- *    Computer Graphics Support Group of 30 Phys-Math Lyceum
- *************************************************************/
- 
-/* FILE NAME   : triangle.h
- * PURPOSE     : Raytracing project.
- *               Subtraction csg operation class defenition header.
- * PROGRAMMER  : CGSG-SummerCamp'2024.
- *               Timofei I. Petrov.
- * LAST UPDATE : 23.07.2024.
- * NOTE        : Module namespace 'virt'.
- *
- * No part of this file may be changed without agreement of
- * Computer Graphics Support Group of 30 Phys-Math Lyceum
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : subtraction.h
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : Subtraction CSG defenition file.
+ * LICENSE     : MIT License
  */
 
 #ifndef __subtraction_h_

@@ -1,18 +1,9 @@
-/*************************************************************
- * Copyright (C) 2024
- *    Computer Graphics Support Group of 30 Phys-Math Lyceum
- *************************************************************/
- 
-/* FILE NAME   : shapes.h
- * PURPOSE     : Raytracing project.
- *               Shapes for raytracing declaration header file.
- * PROGRAMMER  : CGSG-SummerCamp'2024.
- *               Timofei I. Petrov.
- * LAST UPDATE : 23.07.2024.
- * NOTE        : Module namespace 'virt'.
- *
- * No part of this file may be changed without agreement of
- * Computer Graphics Support Group of 30 Phys-Math Lyceum
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : shapes.h
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : Shapes common include file.
+ * LICENSE     : MIT License
  */
 
 #ifndef __shapes_h_

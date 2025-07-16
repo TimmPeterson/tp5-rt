@@ -1,3 +1,11 @@
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : rt_mtl.h
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : 'material' structure defenition file.
+ * LICENSE     : MIT License
+ */
+
 #ifndef __rt_mtl_h_
 #define __rt_mtl_h_
 

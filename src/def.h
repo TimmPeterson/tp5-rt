@@ -1,3 +1,11 @@
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : def.h
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : General defenitions header.
+ * LICENSE     : MIT License
+ */
+
 #ifndef __def_h_
 #define __def_h_
 
@@ -7,33 +15,19 @@
 #include "mth/mth.h"
 
 
-using dword = uint32_t;
-using byte = unsigned char;
-
 /* Project namespace */
 namespace tp5
 {
-  inline double min( double A, double B )
-  {
-    return A < B ? A : B;
-  }
+  /* 4 byte pixel representation type */
+  using dword = uint32_t;
 
-  inline double max( double A, double B )
-  {
-    return A > B ? A : B;
-  }
-  
-  inline double abs( double X )
-  {
-    return X > 0 ? X : -X;
-  }
+  /* 1 byte representation type */
+  using byte  = unsigned char;
 
-  // double clamp( double V, double A, double B )
-  // {
-  //   if (V < A) return A;
-  //   if (V > B) return B;
-  //   return V;
-  // }
+  /* Some usefull comparing functions */
+  using mth::min;
+  using mth::max;
+  using mth::abs;
 
   /* Project type defenitions */
   typedef mth::vec2<double>   vec2;
@@ -77,3 +71,5 @@ namespace tp5
 }
 
 #endif /* __def_h_ */
+
+/* END OF 'def.h' FILE */

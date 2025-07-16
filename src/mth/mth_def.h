@@ -37,6 +37,21 @@ namespace mth
   template<typename Type> class matr;
   template<typename Type> class ray;
   template<typename Type> class camera;
+
+  inline double min( double A, double B )
+  {
+    return A < B ? A : B;
+  }
+
+  inline double max( double A, double B )
+  {
+    return A > B ? A : B;
+  }
+  
+  inline double abs( double X )
+  {
+    return X > 0 ? X : -X;
+  }
 } /* end of 'mth' namespace */
 #endif /* __mth_def_h_ */
 

@@ -1,18 +1,9 @@
-/*************************************************************
- * Copyright (C) 2024
- *    Computer Graphics Support Group of 30 Phys-Math Lyceum
- *************************************************************/
- 
-/* FILE NAME   : mods.h
- * PURPOSE     : Raytracing project.
- *               Modifier class definition header file.
- * PROGRAMMER  : CGSG-SummerCamp'2024.
- *               Timofei I. Petrov.
- * LAST UPDATE : 22.07.2024.
- * NOTE        : None.
- *
- * No part of this file may be changed without agreement of
- * Computer Graphics Support Group of 30 Phys-Math Lyceum
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : mods.h
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : Common mods defenition file.
+ * LICENSE     : MIT License
  */
 
 #ifndef __mods_h_

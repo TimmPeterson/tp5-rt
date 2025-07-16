@@ -1,10 +1,23 @@
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : win.cpp
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : 'window' methods defenition file.
+ * LICENSE     : MIT License
+ */
+
 #include "win.h"
 #include "frame/frame.h"
 
+/* Base developer namespace */
 namespace tp5
 {
-
-window::window( int W, int H ) : running(false), width(W), height(H)
+  /* 'window' class constructor.
+   * ARGUMENTS:
+   *   - resolution in pixels:
+   *       int W, H; 
+   */
+  window::window( int W, int H ) : running(false), width(W), height(H)
   {
     SDL_Init(SDL_INIT_VIDEO);
     
@@ -32,31 +45,43 @@ window::window( int W, int H ) : running(false), width(W), height(H)
         width, 
         height
       );
-  }
+  } /* End of 'window::window' function */
 
+  /* 'window' class destructor */
   window::~window()
   {
     SDL_DestroyTexture(texture);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(wnd);
     SDL_Quit();
-  }
+  } /* End of 'window::~window' function */
 
-  void window::DrawPixels( dword *Pixels ) const
+  /* Draw buffer of pixels to the window.
+   * ARGUMENS:
+   *   - buffer of pixels to draw:
+   *       dword *Pixels;
+   * RETURNS: None.
+   */
+  void window::DrawPixels( const dword *Pixels ) const
   {
     SDL_UpdateTexture(texture, nullptr, Pixels, width * sizeof(uint32_t));
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, texture, nullptr, nullptr);
-  }
+  } /* End of 'window::DrawPixels' function */
 
+  /* Draw pixels from frame to the window.
+   * ARGUMENTS:
+   *   - frame to be drawn:
+   *       const frame &F;
+   */
   void window::DrawFrame( const frame &F ) const
   {
     SDL_UpdateTexture(texture, nullptr, F.pixels, F.width * sizeof(uint32_t));
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, texture, nullptr, nullptr);
-  }
+  } /* End of 'window::DrawFrame' function */
 
-  /* window events dispatching method.
+  /* Window events dispatching method.
    * ARGUMENTS: None.
    * RETURNS: None.
    */
@@ -92,7 +117,7 @@ window::window( int W, int H ) : running(false), width(W), height(H)
       SDL_RenderCopy(renderer, texture, nullptr, nullptr);
       SDL_RenderPresent(renderer);
     }
-  } /* End of 'Run' method */
+  } /* End of 'window::Run' method */
 
   /* On key down call-back virtual method.
    * ARGUMENTS:
@@ -121,4 +146,6 @@ window::window( int W, int H ) : running(false), width(W), height(H)
   void window::OnIdle( void )
   {
   } /* End of 'OnIdle' method */
-} 
+} /* end of 'tp5' namespace */
+
+/* END OF 'win.cpp' FILE */

@@ -1,3 +1,11 @@
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : shape.h
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : Base 'shape' class defenition file.
+ * LICENSE     : MIT License
+ */
+
 #ifndef __shape_h_
 #define __shape_h_
 

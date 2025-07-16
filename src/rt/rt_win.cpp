@@ -1,18 +1,9 @@
-/*************************************************************
- * Copyright (C) 2024
- *    Computer Graphics Support Group of 30 Phys-Math Lyceum
- *************************************************************/
- 
-/* FILE NAME   : mth_def.h
- * PURPOSE     : Raytracing project.
- *               Ray tracing window class methods defenition source file.
- * PROGRAMMER  : CGSG-SummerCamp'2024.
- *               Timofei I. Petrov.
- * LAST UPDATE : 22.07.2024.
- * NOTE        : None.
- *
- * No part of this file may be changed without agreement of
- * Computer Graphics Support Group of 30 Phys-Math Lyceum
+/* PROJECT     : tp5-rt 
+ * FILE NAME   : rt_win.cpp
+ * PROGRAMMER  : Tim Peterson
+ * LAST UPDATE : 16.07.2025
+ * PURPOSE     : 'rt_win' methods defenition file.
+ * LICENSE     : MIT License
  */
 
 #include <iostream>
@@ -21,6 +12,7 @@
 #include <thread>
 
 #include "rt_win.h"
+
 
 /* rt_win constructor function.
  * ARGUMENTS:
@@ -153,15 +145,5 @@ void tp5::rt_win::OnIdle( void )
 {
   window::DrawFrame(this->Frm);
 }
-
-// /* WM_KEYDOWN window message handle function.
-//  * ARGUMENTS:
-//  *   - key:
-//  *       UINT Key;
-//  * RETURNS: None.
-//  */
-// void tp5::rt_win::OnTimer( int Id )
-// {
-// } /* End of 'tp5::rt_win::OnTimer' function */
 
 /* END OF 'rt_win.cpp' FILE */

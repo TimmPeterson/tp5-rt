@@ -92,8 +92,16 @@ namespace tp5
     int UsefullData;
 
     /* 'material' structure constructor function */
-    material( const vec3 &A = vec3(0), const vec3 &D = vec3(0, 0.7, 0.7), const vec3 &S = vec3(0.5), double P = 90, const vec3 &R = vec3(0.5), const vec3 &T = vec3(0), double Refr = 1.1, double M = 0. ) :
-      Ka(A), Kd(D), Ks(S), Ph(P), UsefullData(0), Kr(R), Kt(T), RefractionCoef(Refr), Matte(M)
+    material( 
+      const vec3 &A = vec3(0), 
+      const vec3 &D = vec3(0, 0.7, 0.7), 
+      const vec3 &S = vec3(0.5), 
+      double P = 90, 
+      const vec3 &R = vec3(0.5), 
+      const vec3 &T = vec3(0), 
+      double Refr = 1.1, double M = 0. ) :
+      Ka(A), Kd(D), Ks(S), Ph(P), Kr(R), Kt(T), 
+      UsefullData(0),  RefractionCoef(Refr), Matte(M)
     {
     } /* End of 'material' function */
   }; /* End of 'material' structure */

@@ -4,6 +4,15 @@
 
 API for rendering realistic mathmatical shapes, triangulated primitives and more using ray tracing algorithm.
 
+## Table Of Contets
+- [Dependencies](#dependencies)
+- [Build Instructions](#build-instructions)
+- [Structure](#structure)
+- [Usage Examples](#usage-example)
+- [Math Handling](#math-handling)
+- [Extension](#extension)
+  - [New Shapes](#shapes)
+  - [New Lights](#light-sources)
 ## Getting Started
 
 ### Dependencies
@@ -171,3 +180,29 @@ ray r = cam.FrameRay(123, 456); // <-- pixel coordintes
  * and create instances of them with any component type. 
  */
 ```
+
+## Extension
+
+You can easily add your own new `shapes`, `lights` and `mods` to the engine.
+
+### Shapes
+
+To add new shape follow further steps:
+- Create `your_shape.h` in `src/rt/shapes/` dir.
+- Write implementation of the class `your_shape` in that header.
+- `your_shape` should publicly inherit `shape` wich is defined in `rt_def.h`.
+- Override the following methods:
+  - `Intersect`. Takes ray as an argument and gives back a <u>closest</u> intersecion of your shape with this ray.
+  - `GetNormal`. Takes data about intersection position and gives back normal to the surface of your shape in the point of intersection.
+  - <i>(optional)</i> `IsInside`. This method is needed for CSG (Constructive Solid Geometry) such as intersecions or subtractions. Returns `true|false` depending on if the point is inside of a shape.     
+  - <i>(optional)</i> `AllIntersections`. Also is needed for CSG. Gives back a `stock` of <u>all</u> intersections with shape.
+- Now add `#include "your_shape.h"` to `src/rt/shapes/shapes.h` and thats it!
+
+### Light sources
+
+To add new light source follow further steps:
+- Create `your_light.h` in `src/rt/lights` dir.
+- Write implementation of the class `your_light` in that header.
+- `your_light` should inherit `light` wich is defined in `lights_def.h`.
+- Override the `Shadow` method. It takes a position of a point and gives back some information about lightg such as distanse, direction and color.
+- Now add `#include "your_light.h"` to `src/rt/lights/lights.h` and thats it!

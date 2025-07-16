@@ -28,7 +28,7 @@ namespace tp5
   {
     vec3 Direction;   // Light source direction
     vec3 Color;       // Light source color
-    double Dist;         // Distance to light source
+    double Dist;      // Distance to light source
   }; /* End of 'light_info' structure */
 
   /* Light source representation type */

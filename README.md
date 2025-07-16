@@ -8,11 +8,16 @@ API for rendering realistic mathmatical shapes, triangulated primitives and more
 - [Dependencies](#dependencies)
 - [Build Instructions](#build-instructions)
 - [Structure](#structure)
-- [Usage Examples](#usage-example)
+- [Usage Documentation](#usage-example)
+  - [Create a Window](#creating-window)
+  - [Create a Shape](#adding-shapes-to-the-scene)
+  - [Create a Light Source](#adding-light-sources-to-the-scene)
+  - [Customize a Material](#customizing-the-material)
 - [Math Handling](#math-handling)
 - [Extension](#extension)
   - [New Shapes](#shapes)
   - [New Lights](#light-sources)
+- [Roadmap](#roadmap)
 ## Getting Started
 
 ### Dependencies
@@ -56,8 +61,14 @@ tp5-rt
 
 ## Usage Example
 
+To use API in your source file just `#include "tp5/rt.h"`. All the stuff lies in the `tp5` namespace.
+
+### Creating Window
+
 ```cpp
 #include "tp5/rt.h"
+
+using namespace tp5;
 
 int main( void )
 {
@@ -68,20 +79,74 @@ int main( void )
   // Create the window
   rt::rt_win MyWin(WIDTH, HEIGHT);
 
-  // Create shapes
-  auto *sph = new rt::sphere(...);
-  auto *tor = new rt::torus(...);
-
-  // Create light sources
-  auto *lig = new rt::point_light(...);
-  
-  // Add all stuff to the scene
-  MyWin.Scene << sph << tor << lig;
-
   // Run the window
   MyWin.Run();
 }
 ```
+
+### Adding Shapes to the Scene
+
+To create a shape you need to write smth like that:
+```cpp
+auto *sh = rt::shape_name(...);
+```
+Of course each shape has its one parameters. However almost all of them takes a `material` as a last parameter. We'll speak further about customizing material, but now you can just write `rt::material()` to get the <u>default one</u>.  
+
+Here is how you can add the shape to the scene:
+```cpp
+MyWin.Scene << sh;
+```
+
+If you try to render this scene, you won't see anything. That's because you didn't add any light sources.
+
+### Adding Light Sources to the Scene
+
+Adding light sources is very similar to shapes:
+```cpp
+auto *lg = rt::light_name(...); 
+MyWin.Scene << lg;
+```
+By default there is only one light source type called `point_light`. But there is a guide on adding your own types of lights in the last section of this manual. 
+
+Here is how to create and add a <u>point light</u> to your scene:
+```cpp
+auto *pl = rt::point_light(
+  vec3(10),       // <-- position
+  vec3(0, 1, 0),  // <-- color
+                  // attenuation (default: 0, 0, 0):
+  1.0,            //   <-- constant
+  0.7,            //   <-- linear
+  0.7,            //   <-- quadratic
+  5.              // <--smoothness (affects smoothness of shadow edge)
+);
+
+MyWin.Scene << lg;
+```
+
+### Customizing a Material
+
+One of the most customizable features is materials. Here is what you can change:
+- <b>Ambient coefficient</b>    <i>(color of shadow)</i>
+- <b>Diffuse coefficient</b>    <i>(main material color)</i>
+- <b>Specular coefficient</b>   <i>(color of glare)</i>
+- <b>Shininess</b>              <i>(shaprness of glare)</i>
+- <b>Reflection coefficient</b> <i>(strength of reflection)</i>
+- <b>Refraction coefficient</b> <i>(transparency)
+- <b>Dencity</b>                <i>(the relation with air dencity defines how strong will be refraction)</i>
+- <b>Matte</b>                  <i>(randomizing surface normal in degrees)</i>
+```cpp
+
+auto mtl = rt::material(
+  vec3(0.1),            // ambient
+  vec3(0.0, 0.5, 0.5),  // diffuse
+  vec3(1.0),            // specular
+  90,                   // shininess
+  vec3(0.2),            // reflection
+  vec3(0.3),            // refraction
+  1.1,                  // dencity
+  30.                   // matte
+);
+``` 
 
 ### Math handling
 
@@ -206,3 +271,9 @@ To add new light source follow further steps:
 - `your_light` should inherit `light` wich is defined in `lights_def.h`.
 - Override the `Shadow` method. It takes a position of a point and gives back some information about lightg such as distanse, direction and color.
 - Now add `#include "your_light.h"` to `src/rt/lights/lights.h` and thats it!
+
+## Roadmap
+
+- Table of prebuild materials.
+- Saving scene to the file.
+- More convinient way to work with mods.

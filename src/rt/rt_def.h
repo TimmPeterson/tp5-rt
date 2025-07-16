@@ -37,16 +37,16 @@ namespace tp5
   class intr
   {
   public:
-    double   T;     // Distance from ray origin
+    double T;    // Distance from ray origin
     shape *Shp;  // Intersected shape
-    vec3  P;     // Intersection point
-    vec3  N;     // Intersection normal
+    vec3   P;    // Intersection point
+    vec3   N;    // Intersection normal
     int I[5];    // Additional integer data
 
     enum ENTER_TYPE
     {
-      ENTER, // Ray entered shape after this intersection
-      LEAVE, // Ray left    shape after this intersection
+      ENTER,     // Ray entered shape after this intersection
+      LEAVE,     // Ray left    shape after this intersection
     } EnterFlag; // Intersection entering type
 
     /* Default intr cconstructor function */

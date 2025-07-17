@@ -131,7 +131,7 @@ One of the most customizable features is materials. Here is what you can change:
 - <b>Specular coefficient</b>   <i>(color of glare)</i>
 - <b>Shininess</b>              <i>(shaprness of glare)</i>
 - <b>Reflection coefficient</b> <i>(strength of reflection)</i>
-- <b>Refraction coefficient</b> <i>(transparency)
+- <b>Refraction coefficient</b> <i>(transparency)</i>
 - <b>Dencity</b>                <i>(the relation with air dencity defines how strong will be refraction)</i>
 - <b>Matte</b>                  <i>(randomizing surface normal in degrees)</i>
 ```cpp
